@@ -15,19 +15,9 @@ top:0px; left: 0px;
     padding-left: 20px; padding-right: 20px;
 }
 #current-page
-{color:aqua;}
+{color: rgba(0,204,177,255);}
 h1
-{text-align: center;background-color: aqua;
-animation-name: titre ;
-animation-duration: 10s;
-animation-iteration-count: infinite;}
-@keyframes titre {
-    50% {background-color: antiquewhite;}
-    75% {background-color: red}
-    100% {background-color: blueviolet;}
-}
-
-
+{text-align: center;}
 
 main
 {
@@ -39,12 +29,14 @@ grid-template-areas:
 ". clients clients clients ."
 ". partners partners partners ."
 "statistics statistics statistics statistics statistics"
-". pays pays pays .";
+". pays pays pays ."
+". . contact . ."
+". footer footer footer .";
 grid-template-rows: auto ;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .intro
-{grid-area:intro;}
+{grid-area:intro;color:rgb(105,105,105);}
 h1
 {text-align: center;}
 .intro img
@@ -71,24 +63,32 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 }
+.clients img
+{width:20%;}
 .patient
-{background-color: aqua;
+{background-color:rgba(0,204,177,255);
+    color:white;
 margin-left: 10px; margin-right:10px;
-display: flex;flex-direction: column;}
+display: flex;flex-direction: column;padding:2% 2% 2% 2%;}
 .patient select
-{background-color: aqua;}
+{background-color:rgba(0,204,177,255);  border-color: transparent transparent transparent transparent;
+    color:white; text-decoration: underline;}
+  
 .doctor
-{background-color: aquamarine;
+{background-color: rgba(61,131,223,255); color:white;
     margin-left: 10px; margin-right:10px;
-display: flex;flex-direction: column;}
+display: flex;flex-direction: column; padding:2% 2% 2% 2%;}
 .doctor select
-{background-color: aquamarine;}
+{background-color: rgba(61,131,223,255);  border-color: transparent transparent transparent transparent;
+    color:white; text-decoration: underline;}
+
 .clinic
-{background-color: orange;
+{background-color: black;  color:white;
 margin-left: 10px; margin-right:10px;
-display: flex;flex-direction: column;}
+display: flex;flex-direction: column;padding:2% 2% 2% 2%;}
 .clinic select
-{background-color: orange;}
+{background-color: black;  border-color: transparent transparent transparent transparent;
+    color:white; text-decoration: underline;}
 
 .partners
 {
@@ -102,23 +102,68 @@ justify-content: space-between;
   color:grey;
   font-style: italic;  
 }
+.partners ul
+{    display: inline-flex; flex-wrap: wrap;
+    list-style: none;   }
 
 .statistics
 {grid-area: statistics;
-background-color: aquamarine;
+background-color: rgb(224,244,244);
 margin-top: 5%;
 color:gray;
 text-align: left;
 display:grid;
 grid-template-areas:
-"text-stat stat";
-grid-template-columns: 1fr 3fr;}
+"text-stat stat1 stat2 "
+"star stat3 stat4 ";
+grid-template-columns: 1fr 2fr ;
+grid-column-gap:20px;}
+.statistics h3
+{color:rgb(224,244,244);}
+.star
+{grid-area:star; margin-right: 2%; margin-bottom: 0%;}
 
 .text-stat
 {grid-area: text-stat;}
-.stat table
-{margin-left:20%;}
+.stat1
+{grid-area: stat1;
+    width: 50%;
+    padding: 10px;
+    border: 0px solid white; background-color: white;
+    margin-top: 2%;}
+.stat2
+{grid-area: stat2; width: 50%; margin-right: 100px; margin-left:100px;
+    padding: 10px;
+    border: 0px solid white; background-color: white;
+    margin-top: 2%;}
+.stat3
+{grid-area: stat3;width: 50%;
+    padding: 10px;
+    border: 0px solid white; background-color: white;
+    margin-top: 2%; margin-bottom: 2%;}
+.stat4
+{grid-area: stat4;width: 50%; margin-right: -30%; margin-left:100px;
+    padding: 10px;
+    border: 0px solid white; background-color: white;
+    margin-top: 2%;margin-bottom: 2%;}
 
 .pays
-{grid-area: pays; margin-top: 5%;
+{grid-area: pays; margin-top: 5%; color:rgb(105,105,105);
 display: block; width: 80%; margin-left: auto; margin-right: auto; text-align:center;}
+.office
+{width:50%;}
+
+.offices__slider
+{
+    display: inline-flex; align-content: space-around;  flex-wrap: wrap;
+}
+.contact
+{grid-area: contact;margin-top: 5%;margin-bottom: 5%;
+    display: block; text-align: center;
+}
+.bouton
+{background-color:rgba(0,204,177,255);  border-color: transparent transparent transparent transparent;
+text-decoration: none; color:white; padding: 3%;}
+
+footer
+{grid-area: footer; text-decoration: none; text-align: center; margin-top: 5%;margin-bottom: 5%;}
